@@ -12,7 +12,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - "8080:5000"
+      - "8282:5000"
     restart: always
     volumes:
       - "./logs/gerador-log:/logs" 
@@ -47,7 +47,7 @@ services:
   grafana:
     image: grafana/grafana:11.2.1
     ports:
-      - "3000:3000"
+      - "3030:3000"
     depends_on: 
       - loki              
     networks:
