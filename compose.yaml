@@ -5,12 +5,8 @@ networks:
     driver: bridge
 
 services:
-
   gerador-log:
     image: fabricioveronez/gerador-log
-    build:
-      context: .
-      dockerfile: ./Dockerfile
     ports:
       - "8282:5000"
     restart: always
@@ -43,7 +39,8 @@ services:
     networks:
       - loki
     ports:
-      - 9080:9080
+      - "9080:9080"
+
   grafana:
     image: grafana/grafana:11.2.1
     ports:
