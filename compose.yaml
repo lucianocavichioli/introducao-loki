@@ -27,11 +27,11 @@ services:
 
   promtail:
     image: grafana/promtail:3.2.0
-    command: -config.file=/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yaml
     volumes: 
       - "./logs/gerador-log:/logs/gerador-log"
       - "/var/log:/logs/syslogs"
-      - "./config/promtail.yaml:/etc/promtail/config.yml" 
+      - "./config/promtail.yaml:/etc/promtail/config.yaml" 
       - "./config/position:/position"   
     depends_on: 
       - loki
